@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: yellow;
+  overflow-x: hidden;
+}
