@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "AnchoGX";
+  src: url("/fonts/AnchoGX.woff2") format("woff2-variations");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kyiv";
+  src: url("/fonts/KyivVarGX.woff2") format("woff2-variations");
+  /* font-weight: 0 1000; */
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,12 +25,32 @@ html {
   font-family: "Open Sans", sans-serif;
 }
 
+.variable-font {
+  --font-weight: 1;
+  --font-midline: 0;
+  --font-contrast: 250;
+  font-family: "Kyiv";
+  font-size: 3rem;
+  line-height: 1.5;
+  /* font-weight: 300; */
+  /* font-variation-settings: "wght" 1, "CONT" 250, "MIDL" 0; */
+  font-variation-settings: "wght" var(--font-weight),
+    "CONT" var(--font-contrast), "MIDL" var(--font-midline);
+  transition: font-size 500ms, font-variation-settings 500ms;
+}
+
+.variable-font:hover {
+  font-size: 5rem;
+  /* font-variation-settings: "wght" 1000, "CONT" 250, "MIDL" -1000; */
+  --font-weight: 1000;
+  --font-midline: -1000;
+}
+
 .open-sans-test {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
 
 .webgl {
@@ -24,7 +58,6 @@ html {
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: pink;
 }
 
 nav {
@@ -54,6 +87,6 @@ nav ul {
   position: absolute;
   font-size: 3rem;
   left: 50%;
-  top: 75%;
-  transform: translate(-50%, -75%);
+  top: 80%;
+  transform: translate(-50%, -80%);
 }
